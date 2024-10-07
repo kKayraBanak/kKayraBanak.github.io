@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KKB Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<!-- Importing  font -->
+<style>
+    @font-face {
+        font-family: 'Misto';
+        src: url('fonts/Misto.woff2') format('woff2'),
+             url('fonts/Misto.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    body {
+        background-color: #313131;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .container {
+        border-radius: 30px;
+        width: 80vw;
+        height: 95vh;
+        display: flex;
+        background-color: #fff1e7;
+        justify-content: center;
+        align-items:center;
+        box-sizing: border-box;
+        margin: 20px 0;
+        box-shadow:0px 4px 10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        position: relative;
+        margin-left: 15vw;
+        flex-direction:row;
+    }
+    .text {
+        font-family: 'Misto', cursive;
+        font-size: 600px;
+        color: #313131;
+        position: absolute;
+        transform: translateY(50px) scaleY(1);
+        text-shadow:5px 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    .top-left, .top-right {
+        position: absolute;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        color: black;
+    }
+    .top-left {
+        top: 20px;
+        left: 20px;
+        line-height: 1.2;
+    }
+    .top-right {
+        top: 20px;
+        right: 20px;
+    }
+    .side-container {
+        position: fixed;
+        left: 2.5vw;
+        top: 2.5vh;
+        height: 95vh;
+        width: 12.5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .button {
+        width: 100%;
+        height: 20%;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 24px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease, height 0.3s ease;
+        position: relative;
+        box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
+        margin: 2%;
+    }
+    .button.active {
+        height: 125%;
+    }
+    .button span {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-family: 'Misto', cursive;
+        font-size: 30px;
+        color: white;
+    }
+    .button:nth-child(1) { background-color: #b83c3c; }
+    .button:nth-child(2) { background-color: #1b9b5e; }
+    .button:nth-child(3) { background-color: #2979b9; }
+    .button:nth-child(4) { background-color: #7a1f8f; }
+    .button:nth-child(5) { background-color: #f3a832; }
+    .button:hover { opacity: 0.8; }
+    .button:active { 
+        transform: scale(0.95);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .bottom-container {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .bottom-container.about { 
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #b83c3c; }
+    .bottom-container.writing { background-color: #1b9b5e;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 75px;/* Space between items */
+ }
+    .bottom-container.films { background-color: #2979b9; }
+    .bottom-container.skills { background-color: #7a1f8f; }
+    .bottom-container.contact { background-color: #f3a832; }
+    .bottom-container.about .text {
+        font-size: 400px;
+        color: #00000023;
+        text-shadow:none;
+        line-height:0.75;
+    }
+    .bottom-container.writing .text {
+        font-size: 400px;
+        color: #00000023;
+        text-shadow:none;
+        line-height:1;
+    }
+    .bottom-container.films .text {
+        font-size: 400px;
+        color: #00000023;
+        text-shadow:none;
+        line-height:1;
+    }
+    .bottom-container.skills .text {
+        font-size: 400px;
+        color: #00000023;
+        text-shadow:none;
+        line-height:1;
+    }
+    .bottom-container.contact .text {
+        font-size: 400px;
+        color: #00000023;
+        text-shadow:none;
+        line-height:0.75;
+    }
+    .small-container {
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 15px;
+        box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.4), inset -2px -2px 10px rgba(0,0,0,0.2);
+        width: 40%;
+        height: 85%;
+        margin: 2%;
+        text-align: center;
+        z-index:2;
+    }
+
+.info {
+    position: absolute; /* Allow for diagonal placement */
+    top: 20%; /* Position from top */
+    left: 5%; /* Position from left */
+    background-color: #f0c4a1; /* Example background color */
+}
+
+.downloads {
+    position: absolute; /* Allow for diagonal placement */
+    bottom: 20%; /* Position from bottom */
+    right: 5%; /* Position from right */
+    background-color: #f0c4a1; /* Example background color */
+}
+
+/* Styles for headings and links */
+h2 {
+    color: #313131; /* Change color as needed */
+}
+
+.social-links, .download-link {
+    margin: 5px 0; /* Space between links */
+    color: #313131; /* Change color as needed */
+    text-decoration: none; /* Remove underline */
+}
+
+    .small-container.about-1 { background-color: #a13434;
+    height: 40% }
+    .small-container.about-2 { background-color: #a13434;
+    height: 45%;
+    margin-bottom: 0px;
+    width:85%;
+    }
+    .small-container.writing { background-color: #198f56; 
+        display: flex; 
+        width: 45%;
+        flex-direction: column;          /* Enable Flexbox */
+        justify-content: center; /* Center horizontally */
+        align-items: center; 
+    }
+    .small-container.films { background-color: #266ca5; }
+    .small-container.skills { background-color: #6b1c7c; }
+    .small-container.contact { background-color: #ce8f2b;
+        display: flex;
+        flex-wrap:wrap;
+        width: 500px; /* Make each container 1/4 of the parent width, adjusting for margins */
+        height: 500px; /* Set a fixed height for uniformity */
+        margin: 10px; /* Add margin for spacing */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.4), inset -2px -2px 10px rgba(0, 0, 0, 0.2); }
+
+    /* Style the About Me section */
+.small-container.about-2 h1 {
+    font-family: 'Misto', cursive;
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 370px;
+}
+
+/* Container for the image and text side by side */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* The rounded square for the image */
+.image-container {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    margin-left: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 170px;
+}
+.image-container img {
+    width:80%;
+    border-radius:100%;
+    box-shadow: 5px 5px 15px black;
+}
+
+/* The rounded rectangle for the text */
+.text-container {
+    width: 64%;
+    height: 250px;
+    background-color:  rgba(255, 255, 255, 0.8);;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+    margin-bottom: 110px;
+}
+
+/* Text styling */
+.text-container p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #b83c3c;
+}
+
+    .iframe-container {
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    }
+
+    .writing-content {
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #313131;
+}
+.writing-content h1 {    
+    font-family: 'Misto', cursive;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    position: relative;
+    top:-90px;
+    white-space: nowrap;
+}
+.writing-content h2 {    
+    font-family: 'Misto', cursive;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    position: relative;
+    top:-53px;
+    white-space: nowrap;
+}
+
+.writing-entry {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width:100%;
+    max-width: 500px;
+    max-height: 120px; /* Ensure the height is defined */
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+    text-align: center;
+    padding: 20px; /* Optional for better spacing */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding smooth transition */
+
+}
+.writing-entry:hover{
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Slightly deeper shadow */
+}
+
+.writing-entry-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    align-items: center; /* Centers the content horizontally */
+    width: 100%; /* Ensures it takes the full width of the parent */
+}
+.writing-entry-content a {
+    font-size: 22px;
+    font-weight: 900;
+    position:relative;
+    text-decoration: underline;
+    color: #198f56;
+}
+
+.writing-entry-content p {
+    margin: 0px 0px; /* Added margin for spacing */
+    font-size: 16px; /* Adjust the font size to your preference */
+    font-weight: 750;
+    color: #198f56; /* Ensure it matches your design */
+}
+.writing-entry-content h4 {
+    position:relative;
+    margin: 15px 0 0 0;
+    color: #198f56; /* Adjust color to your preference */
+    font-weight: 300 ;
+    font-size: 16px;
+}
+
+.video-container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+}   
+.video-container {
+    background-color: #266ca5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 41.2%;
+    height: 380px;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.4), inset -2px -2px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 2;
+}
+.video-container iframe {
+    width: 80%;
+    height: 80%; /* Adjust height as needed */
+    border: none;
+    border-radius: 15px;
+    z-index: 3;
+    align-items: center;
+}
+.video-content {
+    text-align: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #313131;
+    font-family: 'Misto', cursive;
+
+}
+.video-content h1 {    
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    position: absolute;
+    top: 48%; /* Adjusted to give more space */
+    left: 25%;
+    transform: translateX(-50%);
+}
+.video-content h2 {    
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    position: absolute;
+    top: 48%; /* Adjusted to give more space */
+    left: 75%;
+    transform: translateX(-50%);
+}
+.skills-content {
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #313131;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    width: 100%; /* Ensures it takes the full width of the parent */
+}
+.skills-content h1 {
+    font-family: 'Misto', cursive;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
+    position: relative;
+    left: 30%;
+    transform: translateX(-50%);
+}
+.skills-content h2 {
+    margin: 10px 0 ; /* Adjusted margin for spacing */
+    font-size: 22px;
+    font-weight: 900;
+    position:relative;
+    text-decoration: underline;
+    color: #fff;
+}
+.skills-list {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Enable Grid layout */
+    flex-wrap:wrap;
+    gap: 10px; /* Space between items */
+    justify-content: center;
+}
+
+.skills-list li {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for each skill */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding smooth transition */
+
+}
+
+
+.skills-list li:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Slightly deeper shadow */
+}
+
+.skill-name {
+    font-weight: bold; /* Emphasize the skill name */
+    font-size: 16px; /* Adjust size as needed */
+    color: #7a1f8f; /* Use a color that fits your palette */
+}
+.skill-proficiency {
+    font-weight: normal; /* Makes proficiency level normal weight */
+    color: 7a1f8f; /* Color for proficiency level */
+    font-size: 12px;
+}
+.contact-minicontainer{
+    width:90%;
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for each skill */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding smooth transition */
+}
+.contact-content {
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #313131;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    width: 100%; /* Ensures it takes the full width of the parent */
+}
+.contact-content h1 {
+    font-family: 'Misto', cursive;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
+    position: relative;
+
+}
+.contact-content h2 {
+    margin: 10px 0 ; /* Adjusted margin for spacing */
+    font-size: 22px;
+    font-weight: 900;
+    position:relative;
+    text-decoration: underline;
+    color: #fff;
+}
+.contact-content p {
+    margin-top:0;
+    font-size: 16px;
+    font-weight: 400;
+    position:relative;
+    color: #ce8f2b;
+}
+.contact-content a {
+    margin-top:25px;
+    margin-bottom:0;
+    font-size: 22px;
+    font-weight: 900;
+    position:relative;
+    color: #ce8f2b;
+    text-decoration: none;
+}
+
+.contact-link-square {
+    width: 75px;
+    height: 75px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for each skill */
+    border-radius: 5px; /* Rounded corners */
+    display: flex; /* Centering the image */
+    justify-content: center; /* Centering the image */
+    align-items: center; /* Centering the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding smooth transition */
+    margin: 0 22.5px; /* Space between squares */
+}
+
+.contact-link-square img {
+    width: 80%; /* Adjust the width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.social-media-links {
+    display: flex; /* Arrange logos in a row */
+    justify-content: center; /* Center the logos */
+    gap: 10px; /* Space between logos */
+}
+.contact-link-square:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); /* Slightly deeper shadow */
+}
+.contact-entry {
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width:80%;
+    max-width: 500px;
+    max-height: 120px; /* Ensure the height is defined */
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px; /* Optional for better spacing */
+    padding-top: 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Adding smooth transition */
+
+}
+.contact-entry:hover{
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Slightly deeper shadow */
+}
+
+
+</style>
+</head>
+<body>
+<!-- Side section buttons -->
+<div class="side-container">
+    <div class="button" onclick="showSection('about')">
+        <span>About</span>
+    </div>
+    <div class="button" onclick="showSection('writing')">
+        <span>Writing</span>
+    </div>
+    <div class="button" onclick="showSection('films')">
+        <span>Films &<br> Videos</span>
+    </div>
+    <div class="button" onclick="showSection('skills')">
+        <span>Skills</span>
+    </div>
+    <div class="button" onclick="showSection('contact')">
+        <span>Contact</span>
+    </div>
+</div>
+<!-- Main container -->
+<div class="container">
+    <div class="top-left">Kemal Kayra Banak</div>
+    <div class="top-right">Portfolio</div>
+    <div class="text">KKB</div>
+</div>
+<!-- Bottom containers -->
+<div class="container bottom-container about" id="about">
+    <div class="text">AboutABOU<br> UTAboutAB<br> BOUTAbout</div>
+    <!-- New smaller containers within about section -->
+    <div class="small-container about-2">
+        <h1>About Me</h1>   
+        <div class="about-content">
+            <div class="image-container">
+            <img src="Pfp.jpg" alt="Your Image"></div>
+            <div class="text-container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget quam at lorem fringilla facilisis vel nec sem. Nullam tristique, ligula ut gravida sollicitudin, libero lorem fermentum ex, at condimentum nulla metus ac orci. Cras ullamcorper felis et magna ultricies, ac congue sem vestibulum. Quisque nec dolor vitae ligula egestas dictum.</p>
+
+                <p>Sed eget justo vel tortor faucibus eleifend non sed lacus. Aenean mollis auctor nibh, in facilisis nisi tempor a. Suspendisse ut dapibus eros. Curabitur in sapien purus. Proin fringilla scelerisque magna, et aliquam dolor tristique at. Ut euismod metus at diam tempus, nec feugiat velit iaculis.</p>
+            </div>
+        </div>
+    </div>
+    <div class="small-container about-1" id="about-info-1">
+        <iframe src="education.html" class="iframe-container"></iframe>
+    </div>
+    <div class="small-container about-1" id="about-info-2">
+        <iframe src="experience.html" class="iframe-container"></iframe>
+    </div>
+</div>
+<div class="container bottom-container writing" id="writing">
+    <div class="text">WritingWRIT<br> NGWritingWR<br> TINGWriting</div>
+        <div class="small-container writing" id="academic interests">
+            <div class="writing-content">
+                <h1> Academic Interests</h1>
+                <div class="writing-entry"> 
+                    <div class="writing-entry-content">
+                        <a>Politics and Economics of Media</a>
+                        <h4>Depictions of polities in media, utopias, dystopias and others Depictions of minorities in media<br>
+                            Misinformation and Polarization<br>
+                            Post-truth and "Culture Wars"<br>
+                            Intellectual Property Laws</h4>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>Politics of the Internet</a>
+                        <h4>Web1.0<br>
+                            Alt-right politics and algorithmic radicalization<br>
+                            Blockchains and decentralized internet<br>
+                            General Data Protection Regulations</h4>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>Queer Theory</a>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>Neurodivergent Politics</a>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>Etymology and Linguistics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="small-container writing" id="articles">
+            <div class="writing-content">
+                <h2>Articles</h2> 
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a> Apparitions of the Internet That Once Was:</a>
+                        <p> How Did The Internet Become a Space of Total  Commercialization? </p>
+                        <h4>Retelling internet history through a lens of corporate greed and searching for moments of Internet Entropy. </h4>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>The Second Coming of Money:</a>
+                        <p>A Discussion on Reviving the Ideals Surrounding the Bitcoin Revolution</p>
+                        <h4>A thought experiment in search of a truly safe and decentralized stablecoin. In other words, reimagining the crypto alternative to money.</h4>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>The Work of Art in the Age of Artificial Reproduction</a>
+                        <h4>Understanding what generative AI means for art, using not-so-subtle callbacks to Walter Benjamin.</h4>
+                    </div>
+                </div>
+                <div class="writing-entry">
+                    <div class="writing-entry-content">
+                        <a>In 2024, Economics Wishes It Was Psychohistory</a>
+                        <h4>A quirky sidepiece accusing economists of trying to make economics into a fictional science.</h4>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container bottom-container films" id="films">
+    <div class="text">Films&VideosFILM<br> OSFilms&VideosFI<br> DEOSFilms&Videos</div>
+        <div class="video-content">
+            <h1> Recent Films </h1>
+            <h2> Recent Videos </h2>
+
+            </div>
+            <div class="video-container-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9qq9cJKY0BA?si=fuQDYNwvi3nyEo8a" allowfullscreen></iframe>
+                </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/PPcwvFn5D28?si=GMK-BI5AfgxX6vBm" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dDKrto2-sfE?si=W8Ns5ByMQt_DsrRo" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/O9c9aoQU9Gs?si=BOjqNf51MmNFkERA" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container bottom-container skills" id="skills">
+    <div class="text">SkillsSKIL<br> LSSkillsSK<br> ILLSSkills</div>
+
+    <!-- Programming skills section -->
+    <div class="small-container skills" id="software skills">
+        <div class="skills-content">
+        <h1>Software<br>Sklils</h1>
+        <h2>Programming</h2>
+        <ul class=skills-list>
+            <li><span class="skill-name">Python<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">R<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">HTML/CSS<br><span class="skill-proficiency">Intermediate</li>
+            <li><span class="skill-name">JavaScript<br><span class="skill-proficiency">Intermediate</li>
+            <li><span class="skill-name">C++<br><span class="skill-proficiency">Intermediate</li>
+        </ul>
+        <h2>Graphic Design</h2>
+        <ul class=skills-list>
+            <li><span class="skill-name">Photoshop<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">Illustrator<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">Blender<br><span class="skill-proficiency">Intermediate</li>
+        </ul>
+        <h2>Videography & Editing</h2>
+        <ul class=skills-list>
+            <li><span class="skill-name">DaVinci Resolve<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">Premiere<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">Filmic Pro<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">After Effects<br><span class="skill-proficiency">Intermediate</li>
+            <li><span class="skill-name">Final Cut<br><span class="skill-proficiency">Beginner</li>
+        </ul>
+        <h2>Academic & Other</h2>
+        <ul class=skills-list>
+            <li><span class="skill-name">LaTeX<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">Microsoft Office<br><span class="skill-proficiency">Advanced</li>
+            <li><span class="skill-name">Stata<br><span class="skill-proficiency">Intermediate</li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- Language skills section -->
+    <div class="small-container skills" id="language-skills">
+        <div class="skills-content">
+
+        <h1>Language<br>Skills</h1>
+        <ul class=skills-list>
+            <li><span class="skill-name">English [C2]<br><span class="skill-proficiency">IELTS Academic 8.5</li>
+            <li><span class="skill-name">French [C1]<br><span class="skill-proficiency">DALF C1</li>
+            <li><span class="skill-name">Italian [B2]</li>
+            <li><span class="skill-name">Spanish [B1]</li>
+            <li><span class="skill-name">Chinese [A2]</li>
+            <li><span class="skill-name">Turkish<br>[Native]</li>
+            <li><span class="skill-name">Greek<br>[Conversational]</li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- Interests section -->
+    <div class="small-container skills" id="interests">
+        <div class="skills-content">
+        <h1>Hobbies &<br>Interests</h1>
+        <ul class=skills-list>
+            <li><span class="skill-name">Piano<br><span class="skill-proficiency">London College of Music Grade 7</li>
+            <li><span class="skill-name">Videography</li>
+            <li><span class="skill-name">Photography</li>
+            <li><span class="skill-name">Tennis</li>
+            <li><span class="skill-name">Hiking</li>
+        </ul>
+    </div>
+    </div>
+</div>
+<div class="container bottom-container contact" id="contact">
+    <div class="text">ContactCONT<br> CTContactCO<br> TACTContact</div>
+    <div class="small-container contact">
+        <div class="contact-content">
+        <h1>Contact Info</h1>
+        </div>
+        <div class="contact-minicontainer">
+            <div class="contact-content">
+                <a>Kemal Kayra Banak</a> 
+                <a>Email:</a>
+                <p>kkayrabanak@hotmail.com</p>
+                <a>Phone Number:</a>
+                <p>+905412254729</p>
+            </div>
+        </div>
+                <div class="social-media-links">
+                    <a href="https://www.linkedin.com/in/kemal-kayra-banak-4940181b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                        <div class="contact-link-square">
+                            <img src="Linkedin.PNG" />
+                        </div>
+                    </a>
+                    <a href="https://github.com/kKayraBanak" target="_blank">
+                        <div class="contact-link-square">
+                            <img src="GitHub.PNG" />
+                        </div>
+                    </a>
+                    <a href="https://www.medium.com/@kKayraBlog" target="_blank">
+                        <div class="contact-link-square">
+                            <img src="Medium.PNG"/>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/@the4thact" target="_blank">
+                        <div class="contact-link-square">
+                            <img src="YT.PNG" />
+                        </div>
+                    </a>
+                    <!-- Add more social media links as needed -->
+                </div>
+        </div>
+
+    <div class="small-container contact">
+        <div class="contact-content">
+        <h1>Download Links</h1>
+            <div class="contact-entry">
+                <a href="#">CV</a>
+            </div>
+            <div class="contact-entry">
+                <a href="#">Full Background Chart</a>
+            </div>
+            <div class="contact-entry">
+                <a href="#">Other Document Download</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Function to show the selected section
+    function showSection(section) {
+        // Show the clicked section
+        const activeSection = document.getElementById(section);
+        activeSection.style.display = 'flex'; // Show the selected section
+        // Scroll into view and center the section
+        activeSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Manage button states
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(btn => {
+            btn.classList.remove('active'); // Remove active class from all buttons
+        });
+        const activeButton = Array.from(buttons).find(btn => btn.onclick.toString().includes(section));
+        if (activeButton) {
+            activeButton.classList.add('active'); // Add active class to the clicked button
+        }
+    }
+
+    // Function to check which sections are currently in view
+    function checkSectionsInView() {
+        const sections = document.querySelectorAll('.container.bottom-container'); // Select all sections
+        const buttons = document.querySelectorAll('.button'); // Select all buttons
+        const viewportHeight = window.innerHeight; // Get the viewport height
+        buttons.forEach(button => {
+            button.classList.remove('active'); // Remove active class from all buttons
+        });
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect(); // Get the bounding rectangle of the section
+            // Check if the section is in the viewport
+            if (rect.top < viewportHeight / 2 && rect.bottom > viewportHeight / 2) {
+                buttons[index].classList.add('active'); // Add active class to the button corresponding to the section
+            }
+        });
+    }
+
+    // Event listener for scroll
+    window.addEventListener('scroll', () => {
+        checkSectionsInView(); // Check which sections are in view on scroll
+    });
+
+    // Initial call to checkSectionsInView on page load
+    window.onload = () => {
+        checkSectionsInView(); // Check sections in view on load
+    };
+</script>
+</body>
+</html>
