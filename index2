@@ -1,0 +1,28 @@
+<!-- Link to Google Fonts for Misto and Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Misto&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Email Signature Table -->
+<table cellpadding="0" cellspacing="0" border="0" style="width:100% background-color: #fff1e7 border-radius:30px;">
+  <tr>
+    <!-- Left Section: KKB in Misto font -->
+    <td style="font-family: 'Misto', sans-serif; font-size: 48px; font-weight: bold; text-align: left; width: 40%; vertical-align: top;">
+      KKB
+    </td>
+
+    <!-- Divider: Thin vertical line -->
+    <td style="border-left: 2px solid black; padding-left: 15px; width: 60%; vertical-align: top; font-family: 'Montserrat', sans-serif;">
+      <!-- Right Section: Your Details in Montserrat -->
+      <strong style="font-size: 18px;">Kemal Kayra Banak</strong><br>
+      <em style="font-size: 16px;">Filmmaker & Content Creator</em><br><br>
+      <span style="font-size: 14px;">
+        <strong>Email:</strong> <a href="mailto:kkayrabanak@hotmail.com" style="text-decoration:none; color:black;">kkayrabanak@hotmail.com</a><br>
+        <strong>Phone:</strong> +90 541 225 4729<br><br>
+        <!-- Social Media Links -->
+        <a href="https://github.com/YourGitHubUsername" style="text-decoration:none; color:black;">GitHub</a> |
+        <a href="https://www.linkedin.com/in/YourLinkedInProfile" style="text-decoration:none; color:black;">LinkedIn</a> |
+        <a href="https://www.youtube.com/YourYouTubeChannel" style="text-decoration:none; color:black;">YouTube</a> |
+        <a href="https://medium.com/@YourMediumProfile" style="text-decoration:none; color:black;">Medium</a>
+      </span>
+    </td>
+  </tr>
+</table>
