@@ -4,154 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KKB Email Signature</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Import Misto font */
-    @font-face {
-        font-family: 'Misto';
-        src: url('https://kKayraBanak.github.io/fonts/Misto.woff2') format('woff2'),
-             url('https://kKayraBanak.github.io/fonts/Misto.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    /* Container styling */
-    .signature-container {
-        background-color: #fcf2eb; /* Beige background */
-        border: 1px solid black; /* Thin black border */
-        border-radius: 15px; /* Rounded corners */
-        padding: 10px;
-        width: 100%;
-        max-width: 350px; /* Shorter width */
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    /* Left section for KKB */
-    .left-section {
-        font-family: 'Misto', sans-serif;
-        font-size: 36px; /* Slightly smaller */
-        font-weight: bold;
-        text-align: center;
-        width: 25%;
-        color: black;
-        margin-right: 10px;
-    }
-
-    /* Right section for contact info */
-    .right-section {
-        border-left: 1px solid black;
-        padding-left: 20px; /* Increased padding for more space */
-        width: 75%;
-    }
-
-    /* Contact text */
-    .contact-info {
-        font-size: 13px;
-        line-height: 1.5;
-    }
-
-    .contact-info strong {
-        font-size: 18px; /* Make your name the largest text */
-    }
-
-    .contact-info a {
-        font-size: 12px;
-        text-decoration: underline;
-        color: black;
-    }
-
-    .email-link {
-        font-size: 12px;
-    }
-
-    /* Horizontal line separator */
-    .horizontal-separator {
-        margin: 10px 0;
-        border: none; /* Remove line */
-        border-bottom: 1px solid black;
-    }
-
-    /* Neumorphic social media links */
-    .social-media-links {
-        margin-top: 10px;
-    }
-
-    .contact-link-square {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        background-color: #fcf2eb; /* Matching beige background */
-        border-radius: 10px; /* Rounded square */
-        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); /* Neumorphic shadow */
-        margin-right: 15px; /* Increased spacing */
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .contact-link-square img {
-        width: 18px;
-        height: 18px;
-        margin-top: 6px;
-    }
-    .contact-link-square a img {
-    border: none; /* Remove image borders */
-    outline: none; /* Remove focus outline on images */
-    }
-    .social-media-links a {
-    text-decoration: none; /* Remove text underline */
-    outline: none; /* Remove focus outline */
-    border: none; /* Remove any border */
+    /* Default styles for other email clients */
+    body {
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
 <body>
-  <!-- Signature Container -->
-  <div class="signature-container">
-    <!-- Left Section for KKB -->
-    <div class="left-section">
-      KKB
-    </div>
-
-    <!-- Right Section for contact info -->
-    <div class="right-section">
-      <div class="contact-info">
-        <strong>Kemal Kayra Banak</strong><br>
-        Filmmaker & Content Creator<br><br>
-        <a> +90 541 225 4729 </a><br>
-        <a href="mailto:kkayrabanak@hotmail.com" class="email-link">kkayrabanak@hotmail.com</a><br>
-        <a href="https://kkayrabanak.github.io" target="_blank">Portfolio Link</a>
-      </div>
-
-      <!-- Horizontal Separator -->
-      <div class="horizontal-separator"></div>
-
-      <!-- Social Media Icons -->
-      <div class="social-media-links">
-        <a href="https://www.linkedin.com/in/kemal-kayra-banak-4940181b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="blank">
-          <div class="contact-link-square">
-            <img src="https://kKayraBanak.github.io/IMG_7973.png" alt="LinkedIn" />
-          </div>
-        </a>
-        <a href="https://github.com/kKayraBanak" target="blank">
-          <div class="contact-link-square">
-            <img src="https://kKayraBanak.github.io/IMG_7972.png" alt="GitHub" />
-          </div>
-        </a>
-        <a href="https://www.medium.com/@kKayraBlog" target="blank">
-          <div class="contact-link-square">
-            <img src="https://kKayraBanak.github.io/IMG_7970.png" alt="Medium" />
-          </div>
-        </a>
-        <a href="https://www.youtube.com/@the4thact" target="blank">
-          <div class="contact-link-square">
-            <img src="https://kKayraBanak.github.io/IMG_7971.png" alt="YouTube" />
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+  <!-- Signature Table Container -->
+  <table border="0" cellpadding="0" cellspacing="0" width="350" align="center" style="border: 1px solid black; border-radius: 15px; background-color: #fcf2eb; font-family: Arial, sans-serif;">
+    <tr>
+      <!-- Left Section for KKB -->
+      <td width="90" align="center" style="padding: 10px; font-size: 36px; font-family: 'Misto', sans-serif; font-weight: bold; color: black; vertical-align: middle;">
+        KKB
+      </td>
+      <!-- Right Section for Contact Info -->
+      <td width="240" style="border-left: 1px solid black; padding-left: 10px; vertical-align: top;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td style="font-size: 18px; font-weight: bold; color: black;">
+              Kemal Kayra Banak
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size: 13px; color: black;">
+              Filmmaker & Content Creator
+            </td>
+          </tr>
+          <tr>
+            <td style="font-size: 12px; padding-top: 10px; color: black;">
+              <a href="tel:+905412254729" style="text-decoration: none; color: black;">+90 541 225 4729</a><br>
+              <a href="mailto:kkayrabanak@hotmail.com" style="text-decoration: none; color: black;">kkayrabanak@hotmail.com</a><br>
+              <a href="https://kkayrabanak.github.io" target="_blank" style="text-decoration: none; color: black;">Portfolio Link</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top: 10px; border-top: 1px solid black;">
+        <!-- Social Media Icons -->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td align="center" style="padding: 10px;">
+              <a href="https://www.linkedin.com/in/kemal-kayra-banak-4940181b4" target="_blank">
+                <img src="https://kKayraBanak.github.io/IMG_7973.png" alt="LinkedIn" width="30" height="30" style="border: none; outline: none;">
+              </a>
+            </td>
+            <td align="center" style="padding: 10px;">
+              <a href="https://github.com/kKayraBanak" target="_blank">
+                <img src="https://kKayraBanak.github.io/IMG_7972.png" alt="GitHub" width="30" height="30" style="border: none; outline: none;">
+              </a>
+            </td>
+            <td align="center" style="padding: 10px;">
+              <a href="https://www.medium.com/@kKayraBlog" target="_blank">
+                <img src="https://kKayraBanak.github.io/IMG_7970.png" alt="Medium" width="30" height="30" style="border: none; outline: none;">
+              </a>
+            </td>
+            <td align="center" style="padding: 10px;">
+              <a href="https://www.youtube.com/@the4thact" target="_blank">
+                <img src="https://kKayraBanak.github.io/IMG_7971.png" alt="YouTube" width="30" height="30" style="border: none; outline: none;">
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
