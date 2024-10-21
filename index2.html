@@ -22,7 +22,7 @@
         border-radius: 15px; /* Rounded corners */
         padding: 20px;
         width: 100%;
-        max-width: 600px;
+        max-width: 500px;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -32,10 +32,10 @@
     /* Left section for KKB */
     .left-section {
         font-family: 'Misto', sans-serif;
-        font-size: 48px;
+        font-size: 40px;
         font-weight: bold;
-        text-align: left;
-        width: 40%;
+        text-align: center;
+        width: 30%;
         color: black;
     }
 
@@ -43,7 +43,7 @@
     .right-section {
         border-left: 2px solid black;
         padding-left: 15px;
-        width: 60%;
+        width: 70%;
     }
 
     /* Contact text */
@@ -53,7 +53,23 @@
     }
 
     .contact-info strong {
-        font-size: 18px;
+        font-size: 20px; /* Make your name larger */
+    }
+
+    .contact-info a {
+        font-size: 13px;
+        text-decoration: underline;
+        color: black;
+    }
+
+    .email-link {
+        font-size: 12px;
+    }
+
+    /* Horizontal line separator */
+    .horizontal-separator {
+        margin: 10px 0;
+        border-bottom: 1px solid black;
     }
 
     /* Social media icons */
@@ -85,9 +101,15 @@
       <div class="contact-info">
         <strong>Kemal Kayra Banak</strong><br>
         Filmmaker & Content Creator<br><br>
-        <strong>Email:</strong> <a href="mailto:kkayrabanak@hotmail.com" style="text-decoration:none; color:black;">kkayrabanak@hotmail.com</a><br>
-        <strong>Phone:</strong> +90 541 225 4729<br>
+        <a href="mailto:kkayrabanak@hotmail.com" class="email-link">kkayrabanak@hotmail.com</a><br>
+        <strong>Phone:</strong> +90 541 225 4729<br><br>
+
+        <!-- Portfolio Link -->
+        <a href="https://kkayrabanak.github.io" target="_blank">kkayrabanak.github.io</a>
       </div>
+
+      <!-- Horizontal Separator -->
+      <div class="horizontal-separator"></div>
 
       <!-- Social Media Icons -->
       <div class="social-media-links">
