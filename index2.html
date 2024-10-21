@@ -31,7 +31,7 @@
     table {
       border-spacing: 0;
       width: 100%;
-      max-width: 350px;
+      max-width: 400px; /* Made it wider */
       margin: 0 auto;
       background-color: #fcf2eb;
       border: 1px solid black;
@@ -51,7 +51,8 @@
     /* Right section: contact info */
     .right-section {
       padding: 10px 20px;
-      border-left: 2px solid black; /* Make vertical separator more prominent */
+      border-left: 2px solid black; /* Vertical separator */
+      padding-left: 15px; /* Ensuring it doesn't touch the border */
     }
 
     .contact-info {
@@ -99,6 +100,16 @@
       width: 18px;
       height: 18px;
       margin-top: 6px;
+    }
+
+    /* Remove purple dash outline (focus highlights) */
+    a, .contact-link-square {
+      outline: none;
+    }
+
+    a:focus, .contact-link-square:focus {
+      outline: none;
+      box-shadow: none;
     }
   </style>
 </head>
