@@ -46,6 +46,18 @@
       color: black;
       text-align: center;
       padding: 10px;
+      position: relative; /* Added for pseudo-element positioning */
+    }
+
+    /* Add vertical separator as a pseudo-element */
+    .left-section::after {
+      content: '';
+      width: 2px; /* Thinner line */
+      height: 80%; /* Adjust height as needed */
+      background-color: black;
+      position: absolute;
+      right: -10px; /* Adjust space to the right of KKB */
+      top: 10%; /* Adjust vertical position */
     }
 
     /* Right section: contact info */
@@ -68,13 +80,6 @@
       color: black;
     }
 
-    /* Vertical Separator*/
-    .vertical-separator {
-      width: 1px;
-      height: 60px;
-      background-color: black;
-      margin: 10px; /* Create space around the separator */
-    }
     /* Horizontal Separator within the right section */
     .horizontal-separator {
       width: 100%;
@@ -91,9 +96,9 @@
     }
 
     .social-media-links a {
-    text-decoration: none; /* Remove text underline */
-    outline: none; /* Remove focus outline */
-    border: none; /* Remove any border */
+      text-decoration: none; /* Remove text underline */
+      outline: none; /* Remove focus outline */
+      border: none; /* Remove any border */
     }
 
     /* Neumorphic button styles for social icons */
@@ -135,9 +140,6 @@
         KKB
       </td>
 
-      <td class="vertical-separator"></td>
-
-      
       <!-- Right Section: Contact Info -->
       <td class="right-section">
         <div class="contact-info">
