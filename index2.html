@@ -31,7 +31,7 @@
     table {
       border-spacing: 0;
       width: 100%;
-      max-width: 500px; /* Made it wider */
+      max-width: 450px; /* Made it wider */
       margin: 0 auto;
       background-color: #fcf2eb;
       border: 1px solid black;
@@ -46,23 +46,22 @@
       color: black;
       text-align: center;
       padding: 15px;
-      position: relative; /* Added for pseudo-element positioning */
+      width: 70px; /* Fixed width for left section */
+      white-space: nowrap; /* Prevent wrapping */
     }
 
-    /* Add vertical separator as a pseudo-element */
-    .left-section::after {
-      content: '';
-      width: 1px; /* Thinner line */
-      height: 60%; /* Adjust height as needed */
+    /* Vertical separator */
+    .vertical-separator {
+      width: 1px;
       background-color: black;
-      position: absolute;
-      right: -5px;
-      top: 20%; /* Adjust vertical position */
+      height: 60%; /* Adjust height as needed */
+      margin: 0 10px; /* Add margin for spacing */
     }
 
     /* Right section: contact info */
     .right-section {
       padding: 10px 20px;
+      vertical-align: top; /* Align content to the top */
     }
 
     .contact-info {
@@ -93,15 +92,9 @@
       margin-top: 10px;
       text-decoration: none;
       outline: none;
+      white-space: nowrap; /* Prevent wrapping */
     }
 
-    .social-media-links a {
-      text-decoration: none; /* Remove text underline */
-      outline: none; /* Remove focus outline */
-      border: none; /* Remove any border */
-    }
-
-    /* Neumorphic button styles for social icons */
     .contact-link-square {
       display: inline-block;
       width: 30px;
@@ -109,7 +102,7 @@
       background-color: #fcf2eb;
       border-radius: 10px;
       box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
-      margin-right: 25px;
+      margin-right: 15px; /* Adjust spacing between icons */
       text-align: center;
       vertical-align: middle;
     }
@@ -117,12 +110,6 @@
     .contact-link-square img {
       width: 18px;
       height: 18px;
-      margin-top: 6px;
-    }
-
-    .contact-link-square a img {
-      border: none; /* Remove image borders */
-      outline: none; /* Remove focus outline on images */
     }
 
     a:focus, .contact-link-square:focus {
@@ -136,9 +123,11 @@
   <table>
     <tr>
       <!-- Left Section: KKB -->
-      <td width="90" class="left-section">
+      <td class="left-section">
         KKB
       </td>
+      
+      <td class="vertical-separator"></td> <!-- Vertical Separator -->
 
       <!-- Right Section: Contact Info -->
       <td class="right-section">
