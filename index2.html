@@ -1,29 +1,118 @@
-<!-- Link to Google Fonts for Misto and Montserrat -->
-<link href="https://fonts.googleapis.com/css2?family=Misto&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KKB Email Signature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Import Misto font */
+    @font-face {
+        font-family: 'Misto';
+        src: url('fonts/Misto.woff2') format('woff2'),
+             url('fonts/Misto.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 
-<!-- Email Signature Table -->
-<table cellpadding="0" cellspacing="0" border="0" style="width:100% background-color: #fff1e7 border-radius:30px;">
-  <tr>
-    <!-- Left Section: KKB in Misto font -->
-    <td style=   @font-face {font-family: 'Misto';src: url('fonts/Misto.woff2') format('woff2'),url('fonts/Misto.woff') format('woff');font-weight: normal;font-style: normal;}, sans-serif; font-size: 48px; font-weight: bold; text-align: left; width: 40%; vertical-align: top;">
+    /* Container styling */
+    .signature-container {
+        background-color: #F5F5DC; /* Beige background */
+        border: 1px solid black; /* Thin black border */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Left section for KKB */
+    .left-section {
+        font-family: 'Misto', sans-serif;
+        font-size: 48px;
+        font-weight: bold;
+        text-align: left;
+        width: 40%;
+        color: black;
+    }
+
+    /* Right section for contact info */
+    .right-section {
+        border-left: 2px solid black;
+        padding-left: 15px;
+        width: 60%;
+    }
+
+    /* Contact text */
+    .contact-info {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .contact-info strong {
+        font-size: 18px;
+    }
+
+    /* Social media icons */
+    .social-media-links {
+        margin-top: 10px;
+    }
+
+    .contact-link-square {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .contact-link-square img {
+        width: 24px;
+        height: 24px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Signature Container -->
+  <div class="signature-container">
+    <!-- Left Section for KKB -->
+    <div class="left-section">
       KKB
-    </td>
+    </div>
 
-    <!-- Divider: Thin vertical line -->
-    <td style="border-left: 2px solid black; padding-left: 15px; width: 60%; vertical-align: top; font-family: 'Montserrat', sans-serif;">
-      <!-- Right Section: Your Details in Montserrat -->
-      <strong style="font-size: 18px;">Kemal Kayra Banak</strong><br>
-      <em style="font-size: 16px;">Filmmaker & Content Creator</em><br><br>
-      <span style="font-size: 14px;">
+    <!-- Right Section for contact info -->
+    <div class="right-section">
+      <div class="contact-info">
+        <strong>Kemal Kayra Banak</strong><br>
+        Filmmaker & Content Creator<br><br>
         <strong>Email:</strong> <a href="mailto:kkayrabanak@hotmail.com" style="text-decoration:none; color:black;">kkayrabanak@hotmail.com</a><br>
-        <strong>Phone:</strong> +90 541 225 4729<br><br>
-        <!-- Social Media Links -->
-        <a href="https://github.com/YourGitHubUsername" style="text-decoration:none; color:black;">GitHub</a> |
-        <a href="https://www.linkedin.com/in/YourLinkedInProfile" style="text-decoration:none; color:black;">LinkedIn</a> |
-        <a href="https://www.youtube.com/YourYouTubeChannel" style="text-decoration:none; color:black;">YouTube</a> |
-        <a href="https://medium.com/@YourMediumProfile" style="text-decoration:none; color:black;">Medium</a>
-      </span>
-    </td>
-  </tr>
-</table>
+        <strong>Phone:</strong> +90 541 225 4729<br>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div class="social-media-links">
+        <a href="https://www.linkedin.com/in/kemal-kayra-banak-4940181b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+          <div class="contact-link-square">
+            <img src="Linkedin.PNG" alt="LinkedIn" />
+          </div>
+        </a>
+        <a href="https://github.com/kKayraBanak" target="_blank">
+          <div class="contact-link-square">
+            <img src="GitHub.PNG" alt="GitHub" />
+          </div>
+        </a>
+        <a href="https://www.medium.com/@kKayraBlog" target="_blank">
+          <div class="contact-link-square">
+            <img src="Medium.PNG" alt="Medium" />
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@the4thact" target="_blank">
+          <div class="contact-link-square">
+            <img src="YT.PNG" alt="YouTube" />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
