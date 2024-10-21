@@ -51,8 +51,6 @@
     /* Right section: contact info */
     .right-section {
       padding: 10px 20px;
-      border-left: 2px solid black; /* Vertical separator */
-      padding-left: 15px; /* Ensuring it doesn't touch the border */
     }
 
     .contact-info {
@@ -70,6 +68,13 @@
       color: black;
     }
 
+    /* Vertical Separator*/
+    .vertical-separator {
+      width: 1px;
+      height: 100%;
+      background-color: black;
+      margin: 10px 0; /* Create space around the separator */
+    }
     /* Horizontal Separator within the right section */
     .horizontal-separator {
       width: 100%;
@@ -81,6 +86,8 @@
     /* Social Media Links */
     .social-media-links {
       margin-top: 10px;
+      text-decoration: none;
+      outline: none;
     }
 
     /* Neumorphic button styles for social icons */
@@ -121,7 +128,9 @@
       <td width="90" class="left-section">
         KKB
       </td>
-
+      
+      <div class="vertical-separator"></div>
+      
       <!-- Right Section: Contact Info -->
       <td class="right-section">
         <div class="contact-info">
