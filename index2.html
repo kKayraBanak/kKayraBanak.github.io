@@ -73,7 +73,7 @@
       width: 1px;
       height: 100%;
       background-color: black;
-      margin: 10px 0; /* Create space around the separator */
+      margin: 10px; /* Create space around the separator */
     }
     /* Horizontal Separator within the right section */
     .horizontal-separator {
@@ -88,6 +88,12 @@
       margin-top: 10px;
       text-decoration: none;
       outline: none;
+    }
+
+    .social-media-links a {
+    text-decoration: none; /* Remove text underline */
+    outline: none; /* Remove focus outline */
+    border: none; /* Remove any border */
     }
 
     /* Neumorphic button styles for social icons */
@@ -109,9 +115,9 @@
       margin-top: 6px;
     }
 
-    /* Remove purple dash outline (focus highlights) */
-    a, .contact-link-square {
-      outline: none;
+    .contact-link-square a img {
+      border: none; /* Remove image borders */
+      outline: none; /* Remove focus outline on images */
     }
 
     a:focus, .contact-link-square:focus {
@@ -128,8 +134,9 @@
       <td width="90" class="left-section">
         KKB
       </td>
-      
-      <div class="vertical-separator"></div>
+
+      <td class="vertical-separator"></td>
+
       
       <!-- Right Section: Contact Info -->
       <td class="right-section">
