@@ -4,76 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KKB Email Signature</title>
+
+  <!-- Font Imports -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Import Misto font -->
   <style>
+    @font-face {
+      font-family: 'Misto';
+      src: url('https://kKayraBanak.github.io/fonts/Misto.woff2') format('woff2'),
+           url('https://kKayraBanak.github.io/fonts/Misto.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    /* General body reset */
     body {
       margin: 0;
       padding: 0;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    /* Default fallback font */
-    .fallback-font {
-      font-family: 'Arial', sans-serif;
+    /* Table as main container for signature */
+    table {
+      border-spacing: 0;
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      background-color: #fcf2eb;
+      border: 1px solid black;
+      border-radius: 15px;
+    }
+
+    /* Left section: KKB */
+    .left-section {
+      font-family: 'Misto', sans-serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Right section: contact info */
+    .right-section {
+      padding: 10px 20px;
+      border-left: 2px solid black; /* Make vertical separator more prominent */
+    }
+
+    .contact-info {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 10px; /* Add spacing before social media section */
+    }
+
+    .contact-info strong {
+      font-size: 18px;
+    }
+
+    .contact-info a {
+      text-decoration: underline;
+      color: black;
+    }
+
+    /* Horizontal Separator within the right section */
+    .horizontal-separator {
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      margin: 10px 0; /* Create space around the separator */
+    }
+
+    /* Social Media Links */
+    .social-media-links {
+      margin-top: 10px;
+    }
+
+    /* Neumorphic button styles for social icons */
+    .contact-link-square {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: #fcf2eb;
+      border-radius: 10px;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5);
+      margin-right: 10px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .contact-link-square img {
+      width: 18px;
+      height: 18px;
+      margin-top: 6px;
     }
   </style>
 </head>
 <body>
   <!-- Signature Table Container -->
-  <table border="0" cellpadding="0" cellspacing="0" width="350" align="center" style="border: 1px solid black; border-radius: 15px; background-color: #fcf2eb; font-family: 'Montserrat', Arial, sans-serif;">
+  <table>
     <tr>
-      <!-- Left Section for KKB -->
-      <td width="90" align="center" style="padding: 10px; font-size: 36px; font-family: 'Misto', sans-serif; font-weight: bold; color: black; vertical-align: middle;">
+      <!-- Left Section: KKB -->
+      <td width="90" class="left-section">
         KKB
       </td>
-      <!-- Right Section for Contact Info -->
-      <td width="240" style="border-left: 1px solid black; padding-left: 10px; vertical-align: top;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td style="font-size: 18px; font-weight: bold; color: black;">
-              Kemal Kayra Banak
-            </td>
-          </tr>
-          <tr>
-            <td style="font-size: 13px; color: black;">
-              Filmmaker & Content Creator
-            </td>
-          </tr>
-          <tr>
-            <td style="font-size: 12px; padding-top: 10px; color: black;">
-              <a href="tel:+905412254729" style="text-decoration: none; color: black;">+90 541 225 4729</a><br>
-              <a href="mailto:kkayrabanak@hotmail.com" style="text-decoration: none; color: black;">kkayrabanak@hotmail.com</a><br>
-              <a href="https://kkayrabanak.github.io" target="_blank" style="text-decoration: none; color: black;">Portfolio Link</a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2" style="padding-top: 10px; border-top: 1px solid black;">
-        <!-- Social Media Icons -->
-        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-          <tr>
-            <td align="center" style="padding: 10px;">
-              <a href="https://www.linkedin.com/in/kemal-kayra-banak-4940181b4" target="_blank" style="display: block; width: 30px; height: 30px; background-color: #fcf2eb; border-radius: 10px; box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); text-align: center;">
-                <img src="https://kKayraBanak.github.io/IMG_7973.png" alt="LinkedIn" width="18" height="18" style="margin-top: 6px;">
-              </a>
-            </td>
-            <td align="center" style="padding: 10px;">
-              <a href="https://github.com/kKayraBanak" target="_blank" style="display: block; width: 30px; height: 30px; background-color: #fcf2eb; border-radius: 10px; box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); text-align: center;">
-                <img src="https://kKayraBanak.github.io/IMG_7972.png" alt="GitHub" width="18" height="18" style="margin-top: 6px;">
-              </a>
-            </td>
-            <td align="center" style="padding: 10px;">
-              <a href="https://www.medium.com/@kKayraBlog" target="_blank" style="display: block; width: 30px; height: 30px; background-color: #fcf2eb; border-radius: 10px; box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); text-align: center;">
-                <img src="https://kKayraBanak.github.io/IMG_7970.png" alt="Medium" width="18" height="18" style="margin-top: 6px;">
-              </a>
-            </td>
-            <td align="center" style="padding: 10px;">
-              <a href="https://www.youtube.com/@the4thact" target="_blank" style="display: block; width: 30px; height: 30px; background-color: #fcf2eb; border-radius: 10px; box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.5); text-align: center;">
-                <img src="https://kKayraBanak.github.io/IMG_7971.png" alt="YouTube" width="18" height="18" style="margin-top: 6px;">
-              </a>
-            </td>
-          </tr>
-        </table>
+
+      <!-- Right Section: Contact Info -->
+      <td class="right-section">
+        <div class="contact-info">
+          <strong>Kemal Kayra Banak</strong><br>
+          Filmmaker & Content Creator<br><br>
+          <a>+90 541 225 4729</a><br>
+          <a href="mailto:kkayrabanak@hotmail.com">kkayrabanak@hotmail.com</a><br>
+          <a href="https://kkayrabanak.github.io" target="_blank">Portfolio Link</a>
+        </div>
+
+        <!-- Horizontal Separator -->
+        <div class="horizontal-separator"></div>
+
+        <!-- Social Media Links -->
+        <div class="social-media-links">
+          <a href="https://www.linkedin.com/in/kemal-kayra-banak-4940181b4" target="blank">
+            <div class="contact-link-square">
+              <img src="https://kKayraBanak.github.io/IMG_7973.png" alt="LinkedIn" />
+            </div>
+          </a>
+          <a href="https://github.com/kKayraBanak" target="blank">
+            <div class="contact-link-square">
+              <img src="https://kKayraBanak.github.io/IMG_7972.png" alt="GitHub" />
+            </div>
+          </a>
+          <a href="https://www.medium.com/@kKayraBlog" target="blank">
+            <div class="contact-link-square">
+              <img src="https://kKayraBanak.github.io/IMG_7970.png" alt="Medium" />
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@the4thact" target="blank">
+            <div class="contact-link-square">
+              <img src="https://kKayraBanak.github.io/IMG_7971.png" alt="YouTube" />
+            </div>
+          </a>
+        </div>
       </td>
     </tr>
   </table>
