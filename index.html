@@ -271,7 +271,7 @@ h2 {
     display: inline-block; /* Keep the rotating words inline with the text */
     overflow: hidden;
     vertical-align: bottom;
-    height: 1em; /* Adjust the height to fit the font size */
+    height: 1.5em; /* Adjust the height to fit the font size */
     margin-left: 10px; /* Add space between the words and static text */
 }
 
@@ -279,26 +279,27 @@ h2 {
     display: inline-block;
     overflow: hidden;
     height: 100%; /* Make sure this height matches the height of the wrapper */
-    line-height: 1em; /* Align words properly within the container */
+    line-height: 1.5em; /* Align words properly within the container */
 }
 
 .words span {
     display: block;
     color: #a13434; /* Adjust the text color */
-    animation: rotateWords 36s infinite; /* Adjusted total duration to fit all words */
+    font-weight: bold; /* Make the rotating words bold */
+    animation: rotateWords 18s infinite; /* Adjusted total duration for smoother transitions */
 }
 
 @keyframes rotateWords {
-    0% { transform: translateY(0); }
-    11.11% { transform: translateY(0); }
-    22.22% { transform: translateY(-100%); }
-    33.33% { transform: translateY(-100%); }
-    44.44% { transform: translateY(-200%); }
-    55.55% { transform: translateY(-200%); }
-    66.66% { transform: translateY(-300%); }
-    77.77% { transform: translateY(-300%); }
-    88.88% { transform: translateY(-400%); }
-    100% { transform: translateY(-500%); } /* Now it includes all the words */
+    0% { transform: translateY(0); }           /* First word */
+    11.11% { transform: translateY(0); }       /* Stay on first */
+    22.22% { transform: translateY(-100%); }   /* Second word */
+    33.33% { transform: translateY(-200%); }   /* Third word */
+    44.44% { transform: translateY(-300%); }   /* Fourth word */
+    55.55% { transform: translateY(-400%); }   /* Fifth word */
+    66.66% { transform: translateY(-500%); }   /* Sixth word */
+    77.77% { transform: translateY(-600%); }   /* Seventh word */
+    88.88% { transform: translateY(-700%); }   /* Eighth word */
+    100% { transform: translateY(-800%); }     /* Ninth word */
 }
 
 p {
